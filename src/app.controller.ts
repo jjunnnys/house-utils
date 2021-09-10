@@ -1,16 +1,9 @@
-import { Controller, Get, Query, Render } from '@nestjs/common';
+import { Controller, Get, Render } from '@nestjs/common';
 
+//* 페이지 렌딩 부분
 @Controller()
 export class AppController {
   @Render('home')
   @Get()
-  public index(@Query('name') name?: string) {
-    return { name };
-  }
-
-  @Render('about')
-  @Get('/about')
-  public about() {
-    return {};
-  }
+  home() {}
 }

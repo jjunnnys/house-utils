@@ -47,6 +47,7 @@
     "max-classes-per-file": "off",
     "no-useless-constructor": "warn",
     "no-empty-function": "warn",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "react/prop-types": "off"
   }
 }
