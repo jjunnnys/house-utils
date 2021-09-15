@@ -18,6 +18,8 @@
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
     "axios": "0.21.4",
+    "class-transformer": "0.4.0",
+    "class-validator": "0.13.1",
     "cross-env": "7.0.3",
     "nest-next": "9.4.0",
     "next": "11.1.2",

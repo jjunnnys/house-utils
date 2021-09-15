@@ -1,4 +1,4 @@
-import { BrokeragePolicy } from './BrokeragePolicy';
+import { BrokeragePolicy } from '../interface/bokerage-policy.inerfase';
 import { BrokerageRule } from './BrokerageRule';
 
 /* 매매일 때 중개수수료를 계산해주는 클래스 */

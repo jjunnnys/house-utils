@@ -1,5 +1,5 @@
 import { ActionType } from '@/types/ActionType';
-import { BrokeragePolicy } from './BrokeragePolicy';
+import { BrokeragePolicy } from '../interface/bokerage-policy.inerfase';
 import { PurchaseBrokeragePolicy } from './PurchaseBrokeragePolicy';
 import { RentBrokeragePolicy } from './RentBrokeragePolicy';
 
