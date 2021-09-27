@@ -29,18 +29,9 @@ export class BrokerageController {
     @Query('actionType') actionType: ActionType,
   ): Promise<number> {
     const policy = BroKeragePolicyFactory.of(actionType);
-    // const price: number = await this.brokerageService.getPriceOrThrow(id); // TODO: apartmentId -> price  DB에서 금액을 가져와서 계산
-    // return policy.calculate(price);
 
     try {
-      const resultPrice = new Promise<number>((resolve, reject) => {
-        const price = dummyDBApartment.find((apart) => apart.id === id)?.price;
-        if (price) {
-          return resolve(price);
-        }
-        return reject(new Error('찾는 id 값이 없습니다.'));
-      });
-      const price = await resultPrice;
+      const price: number = await this.brokerageService.getPriceOrThrow(id); // TODO: apartmentId -> price  DB에서 금액을 가져와서 계산
       return policy.calculate(price);
     } catch (error) {
       throw new Error(`ENTITY NOT FOUND: ${error}`);

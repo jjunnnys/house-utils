@@ -4,7 +4,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Apartment {
   @PrimaryGeneratedColumn('rowid')
-  private id!: number;
+  id!: number;
 
   @Column('text', { nullable: false })
   name!: string;
