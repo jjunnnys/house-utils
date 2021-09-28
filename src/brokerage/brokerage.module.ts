@@ -8,5 +8,6 @@ import { ApartmentRepository } from './repositories/ApartmentRepository';
   imports: [TypeOrmModule.forFeature([ApartmentRepository])],
   controllers: [BrokerageController],
   providers: [BrokerageService],
+  exports: [TypeOrmModule],
 })
 export class BrokerageModule {}

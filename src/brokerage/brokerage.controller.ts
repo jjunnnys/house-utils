@@ -1,12 +1,7 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { ActionType } from '@/types/ActionType';
 import { BroKeragePolicyFactory } from './policy';
 import { BrokerageService } from './brokerage.service';
-
-const dummyDBApartment = [
-  { id: 1, address: '서울시 강남구', name: '퍼스트 클래스 아파트', price: 1_000_000_000 },
-  { id: 2, address: '서울시 송파구', name: '리버뷰 아파트', price: 800_000_000 },
-];
 
 @Controller('api/calc')
 export class BrokerageController {
@@ -25,7 +20,7 @@ export class BrokerageController {
   // 이 아파트는 얼마??
   @Get('apartment/:apartmentId')
   async calcBrokerageByApartmentId(
-    @Query('apartmentId') id: number,
+    @Param('apartmentId') id: number,
     @Query('actionType') actionType: ActionType,
   ): Promise<number> {
     const policy = BroKeragePolicyFactory.of(actionType);

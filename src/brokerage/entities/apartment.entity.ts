@@ -12,6 +12,6 @@ export class Apartment {
   @Column('text', { nullable: false })
   address!: string;
 
-  @Column('long', { nullable: false })
+  @Column('bigint', { nullable: false })
   price!: number;
 }

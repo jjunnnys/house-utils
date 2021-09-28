@@ -1,9 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ActionType } from '@/types/ActionType';
 
 function Home() {
   const [brokerage, setBrokerage] = useState<number | undefined>();
+  useEffect(() => {
+    (async () => {
+      const params: { actionType: ActionType } = {
+        actionType: 'RENT',
+      };
+      const result = await axios.get('http://localhost:3000/api/calc/apartment/1', { params });
+      console.log({ result });
+    })();
+  }, []);
   return (
     <form
       onSubmit={async (e) => {
@@ -18,7 +27,9 @@ function Home() {
             actionType,
             price,
           };
-          const result = await axios.get<number>('http://localhost:3000/api/calc/brokerage', { params });
+          const result = await axios.get<number>('http://localhost:3000/api/calc/brokerage', {
+            params,
+          });
           setBrokerage(result.data);
         } catch (error) {
           console.error(error);
